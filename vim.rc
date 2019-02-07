@@ -14,6 +14,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'martinda/Jenkinsfile-vim-syntax'
+Plugin 'w0rp/ale'
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
