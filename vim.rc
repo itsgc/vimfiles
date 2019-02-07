@@ -1,0 +1,37 @@
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'nvie/vim-flake8'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'pearofducks/ansible-vim'
+Plugin 'martinda/Jenkinsfile-vim-syntax'
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+call vundle#end()
+filetype plugin indent on
+syntax enable
+set background=dark
+set number
+set autoindent
+set tabstop=8
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set cursorline
+set showmatch
+set gfn=Source\ Code\ Pro\ 16
+let python_highlight_all = 1
+colorscheme solarized
+autocmd BufWritePost *.py call Flake8()
