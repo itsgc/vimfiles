@@ -31,7 +31,7 @@ syntax enable
 set background=dark
 set number
 set autoindent
-set tabstop=8
+set tabstop=4
 set expandtab
 set shiftwidth=4
 set softtabstop=4
@@ -43,3 +43,7 @@ let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark="hard"
 colorscheme gruvbox
 autocmd BufWritePost *.py call Flake8()
+autocmd FileType tf setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=2
+autocmd FileType pp setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=2
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=2
+autocmd FileType yml setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=2
