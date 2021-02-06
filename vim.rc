@@ -43,6 +43,7 @@ let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark="hard"
 colorscheme gruvbox
 autocmd BufWritePost *.py call Flake8()
+autocmd FileType py setlocal shiftwidth=4 tabstop=4 expandtab softtabstop=4
 autocmd FileType tf setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=2
 autocmd FileType pp setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=2
 autocmd FileType js setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=2
