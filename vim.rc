@@ -3,9 +3,11 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'Yggdroot/indentLine'
+Plugin 'morhetz/gruvbox'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -15,10 +17,16 @@ Plugin 'honza/vim-snippets'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'martinda/Jenkinsfile-vim-syntax'
 Plugin 'w0rp/ale'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'majutsushi/tagbar'
+Plugin 'chrisbra/csv.vim'
+Plugin 'rust-lang/rust.vim'
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:vim_json_conceal=0
 
 call vundle#end()
 filetype plugin indent on
@@ -26,7 +34,7 @@ syntax enable
 set background=dark
 set number
 set autoindent
-set tabstop=8
+set tabstop=4
 set expandtab
 set shiftwidth=4
 set softtabstop=4
@@ -34,5 +42,14 @@ set cursorline
 set showmatch
 set gfn=Source\ Code\ Pro\ 16
 let python_highlight_all = 1
-colorscheme solarized
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark="hard"
+colorscheme gruvbox
 autocmd BufWritePost *.py call Flake8()
+autocmd FileType py setlocal shiftwidth=4 tabstop=4 expandtab softtabstop=4
+autocmd FileType tf setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=2
+autocmd FileType pp setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=2
+autocmd FileType js setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=2
+autocmd FileType toml setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=2
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=2
+autocmd FileType yml setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=2
