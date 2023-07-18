@@ -1,24 +1,26 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
 set viminfo='20,<100000,s1000000
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'Yggdroot/indentLine'
-Plugin 'morhetz/gruvbox'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'nvie/vim-flake8'
-Plugin 'pearofducks/ansible-vim'
-Plugin 'martinda/Jenkinsfile-vim-syntax'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'chrisbra/csv.vim'
-Plugin 'fgsch/vim-varnish'
-Plugin 'hashivim/vim-terraform'
-Plugin 'rust-lang/rust.vim'
-call vundle#end()
+call plug#begin('~/.vim/plugged')
+
+Plug 'VundleVim/Vundle.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'Yggdroot/indentLine'
+Plug 'morhetz/gruvbox'
+Plug 'davidhalter/jedi-vim'
+Plug 'nvie/vim-flake8'
+Plug 'pearofducks/ansible-vim'
+Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'chrisbra/csv.vim'
+Plug 'fgsch/vim-varnish'
+Plug 'hashivim/vim-terraform'
+Plug 'rust-lang/rust.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+call plug#end()
 
 let python_highlight_all = 1
 let g:vim_json_conceal=0
@@ -27,9 +29,9 @@ let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark="hard"
+let g:gruvbox_invert_tabline = 1
 let g:airline_powerline_fonts = 1
 
-filetype plugin indent on
 syntax enable
 
 colorscheme gruvbox
@@ -45,6 +47,17 @@ set cursorline
 set showmatch
 set completeopt=menu,menuone,preview,noselect,noinsert
 set splitright
+
+map <ESC>1 1gt
+map <ESC>2 2gt
+map <ESC>3 3gt
+map <ESC>4 4gt
+map <ESC>5 5gt
+map <ESC>6 7gt
+map <ESC>, :tabprevious<CR>
+map <ESC>. :tabnext<CR>
+map <ESC>t :tabnew<CR>
+map <ESC>w :tabclose<CR>
 
 autocmd vimenter * ++nested colorscheme gruvbox
 autocmd BufWritePost *.py call Flake8()
