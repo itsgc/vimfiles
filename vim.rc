@@ -4,7 +4,6 @@ filetype off
 set viminfo='20,<100000,s1000000
 call plug#begin('~/.vim/plugged')
 
-Plug 'VundleVim/Vundle.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/indentLine'
 Plug 'morhetz/gruvbox'
@@ -12,27 +11,28 @@ Plug 'davidhalter/jedi-vim'
 Plug 'nvie/vim-flake8'
 Plug 'pearofducks/ansible-vim'
 Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'chrisbra/csv.vim'
 Plug 'fgsch/vim-varnish'
 Plug 'hashivim/vim-terraform'
 Plug 'rust-lang/rust.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
 let python_highlight_all = 1
-let g:vim_json_conceal=0
-let g:rustfmt_autosave = 1
-let g:rustfmt_emit_files = 1
-let g:rustfmt_fail_silently = 0
-let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark="hard"
+let g:vim_json_conceal = 0
+let g:ale_linters = {'rust': ['cargo']}
+let g:ale_fixers = { 'rust': ['rustfmt', 'trim_whitespace', 'remove_trailing_lines'] }
+let g:ale_fix_on_save = 1
+let g:gruvbox_italic = 1
+let g:gruvbox_contrast_dark = "hard"
 let g:gruvbox_invert_tabline = 1
 let g:airline_powerline_fonts = 1
 
 syntax enable
+filetype plugin indent on
 
 colorscheme gruvbox
 
